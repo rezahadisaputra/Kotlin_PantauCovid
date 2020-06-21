@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pantau Covid</string>
+    <string name="jumlahpositive">1</string>
+    <string name="kasus_positive">Kasus Positive</string>
+    <string name="jumlahsembuh">1</string>
+    <string name="kasus_sembuh">Jumlah Sembuh</string>
+    <string name="nama_provinsi">Nama Provinsi</string>
+    <string name="about_me">About Me</string>
+    <string name="datacovid">Data Covid per 6 Juni 2020</string>
+    <string name="jumlah_meninggal">Jumlah Meninggal</string>
+    <string name="jumlah_sembuh">Jumlah Sembuh</string>
+    <string name="kasus_positif">Kasus Positif</string>
+    <string name="name_me">Reza Hadi Saputra</string>
+    <string name="email_me">rezahadisaputra007@gmail.com</string>
+    <string name="about_app">About App</string>
+    <string name="data_covid_per_tanggal_10_juni_2020">Data Covid Per Tanggal 10 Juni 2020</string>
+    <string name="diambil_dari_kawalcorona_com">Diambil Dari KawalCorona.com</string>
+</resources>

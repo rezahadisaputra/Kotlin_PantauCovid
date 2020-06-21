@@ -1,0 +1,205 @@
+package com.example.boedoet.pantaucovid
+
+object CovidData {
+    private val namaprovinsi = arrayOf(
+        "DKI Jakarta",
+        "Jawa Timur",
+        "Jawa Barat",
+        "Sulawesi Selatan",
+        "Jawa Tengah",
+        "Kalimantan Selatan",
+        "Sumatera Selatan",
+        "Papua",
+        "Banten",
+        "Nusa Tenggara Barat",
+        "Sumatera Barat",
+        "Sumaterta Utara",
+        "Bali",
+        "Sulawesi Utara",
+        "Kalimantan Tengah",
+        "Kalimantan Timur",
+        "Maluku",
+        "Sulawesi Tenggara",
+        "Daerah Istimewa Yogyakarta",
+        "Kalimantan Barat",
+        "Kepulauan Riau",
+        "Maluku Utara",
+        "Papua Barat",
+        "Kalimantan Utara",
+        "Sulawesi Tengah",
+        "Lampung",
+        "Gorontalo",
+        "Kepulauan Bangka Belitung",
+        "Riau",
+        "Jambi",
+        "Nusa Tenggara Timur",
+        "Sulawesi Barat",
+        "Bengkulu",
+        "Aceh"
+    )
+
+    private val kasuspositive = arrayOf(
+        8355,
+        6533,
+        2448,
+        2194,
+        1674,
+        1438,
+        1188,
+        1108,
+        1061,
+        830,
+        645,
+        618,
+        608,
+        551,
+        522,
+        351,
+        315,
+        263,
+        249,
+        234,
+        228,
+        190,
+        183,
+        170,
+        159,
+        148,
+        139,
+        121,
+        120,
+        103,
+        103,
+        94,
+        92,
+        20
+    )
+
+    private var kasussembuh = arrayOf(
+        3371,
+        1584,
+        962,
+        704,
+        508,
+        118,
+        402,
+        78,
+        391,
+        325,
+        361,
+        189,
+        409,
+        73,
+        202,
+        216,
+        89,
+        172,
+        191,
+        117,
+        122,
+        33,
+        75,
+        130,
+        93,
+        105,
+        62,
+        41,
+        107,
+        27,
+        30,
+        63,
+        46,
+        18
+    )
+
+    private var kasusmeninggal = arrayOf(
+        533,
+        514,
+        161,
+        97,
+        103,
+        104,
+        42,
+        7,
+        72,
+        25,
+        29,
+        52,
+        5,
+        47,
+        28,
+        3,
+        8,
+        5,
+        8,
+        4,
+        16,
+        19,
+        2,
+        2,
+        4,
+        11,
+        7,
+        1,
+        6,
+        0,
+        1,
+        2,
+        4,
+        1
+    )
+
+    private var fotoprovinsi = arrayOf(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Coat_of_arms_of_Jakarta.svg/674px-Coat_of_arms_of_Jakarta.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Coat_of_arms_of_East_Java.svg/330px-Coat_of_arms_of_East_Java.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/West_Java_coa.png/330px-West_Java_coa.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Coat_of_arms_of_South_Sulawesi.svg/270px-Coat_of_arms_of_South_Sulawesi.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Coat_of_arms_of_Central_Java.svg/330px-Coat_of_arms_of_Central_Java.svg.png",
+        "https://1.bp.blogspot.com/-LLC_wG04svg/XTRv5FwUwaI/AAAAAAAADKQ/qBPrKcBa0BwLVCHulifWTq375SU_5_UCACLcBGAs/s1600/logo-kalimantan-selatan.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Coat_of_arms_of_South_Sumatra.svg/270px-Coat_of_arms_of_South_Sumatra.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Coat_of_arms_of_Papua.png/270px-Coat_of_arms_of_Papua.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Coat_of_arms_of_Banten.png/330px-Coat_of_arms_of_Banten.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Coat_of_arms_of_West_Nusa_Tenggara.svg/270px-Coat_of_arms_of_West_Nusa_Tenggara.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Coat_of_arms_of_West_Sumatra.svg/270px-Coat_of_arms_of_West_Sumatra.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Coat_of_arms_of_North_Sumatra.svg/330px-Coat_of_arms_of_North_Sumatra.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Coat_of_arms_of_Bali.svg/330px-Coat_of_arms_of_Bali.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Coat_of_arms_of_North_Sulawesi.svg/270px-Coat_of_arms_of_North_Sulawesi.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Coat_of_arms_of_Central_Kalimantan.png/270px-Coat_of_arms_of_Central_Kalimantan.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Coat_of_arms_of_East_Kalimantan.svg/270px-Coat_of_arms_of_East_Kalimantan.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Coat_of_arms_of_Maluku.svg/270px-Coat_of_arms_of_Maluku.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Coat_of_arms_of_Southeast_Sulawesi.svg/270px-Coat_of_arms_of_Southeast_Sulawesi.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Coat_of_arms_of_Yogyakarta.svg/270px-Coat_of_arms_of_Yogyakarta.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Coat_of_arms_of_West_Kalimantan.svg/270px-Coat_of_arms_of_West_Kalimantan.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Coat_of_arms_of_Riau_Islands.png/270px-Coat_of_arms_of_Riau_Islands.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Coat_of_arms_of_North_Maluku.png/270px-Coat_of_arms_of_North_Maluku.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Coat_of_arms_of_West_Papua.svg/270px-Coat_of_arms_of_West_Papua.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Coat_of_arms_of_North_Kalimantan.png/338px-Coat_of_arms_of_North_Kalimantan.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Coat_of_arms_of_Central_Sulawesi.png/270px-Coat_of_arms_of_Central_Sulawesi.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Coat_of_arms_of_Lampung.svg/270px-Coat_of_arms_of_Lampung.svg.png",
+        "https://3.bp.blogspot.com/-75ec3fJKhgU/UNl0Tdg9UXI/AAAAAAAAIrg/YztGIINVa2w/s1600/LOGO+PROVINSI+GORONTALO.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Coat_of_arms_of_Bangka_Belitung_Islands.svg/270px-Coat_of_arms_of_Bangka_Belitung_Islands.svg.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Coat_of_arms_of_Riau.svg/270px-Coat_of_arms_of_Riau.svg.png",
+        "https://i.imgur.com/L16R3rV.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Coat_of_Arms_of_East_Nusa_Tenggara_NEW.png/270px-Coat_of_Arms_of_East_Nusa_Tenggara_NEW.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Coat_of_arms_of_West_Sulawesi.png/270px-Coat_of_arms_of_West_Sulawesi.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Coat_of_arms_of_Bengkulu.png/270px-Coat_of_arms_of_Bengkulu.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Coat_of_arms_of_Aceh.svg/330px-Coat_of_arms_of_Aceh.svg.png"
+    )
+
+    val listData: ArrayList<Covid>
+
+    get() {
+        val list = arrayListOf<Covid>()
+        for (position in namaprovinsi.indices) {
+            val covid = Covid()
+            covid.Provinsi = namaprovinsi[position]
+            covid.Positive = kasuspositive[position]
+            covid.Sembuh = kasussembuh[position]
+            covid.Meninggal = kasusmeninggal[position]
+            covid.Photo = fotoprovinsi[position]
+            list.add(covid)
+        }
+        return list
+    }
+
+}
